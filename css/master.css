@@ -1,0 +1,637 @@
+:root
+{
+    --main--color:#ffc107;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container
+{
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+/* Start Settings box */
+.settings-box
+{
+    position: fixed;
+    background: #fff;
+    z-index: 1000;
+    left: -220px;
+    top: 0;
+    width: 220px;
+    min-height: 100vh;
+    transition: 0.3s;
+
+}
+.settings-box.open
+{
+    left: 0;
+}
+.settings-box .toggle-settings 
+{
+    content: "\f013";
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    font-size: x-large;
+    background: #fff;
+    cursor: pointer;
+    width: 30px;
+
+}
+.settings-box .toggle-settings .fa-gear
+{
+
+    padding: 5px 5px;
+}
+
+.settings-box .option-box
+{
+    margin: 20px;
+    padding: 15px;
+}
+.settings-box .option-box h4
+{
+    text-align: center;
+    margin: 18px;
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+
+}
+.settings-box .option-box .colors-list
+{
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0;
+
+}
+.settings-box .option-box .colors-list li
+{
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    border-radius:50% ;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0.5;
+
+}
+.settings-box .option-box .colors-list li.active
+{
+
+ opacity: 1;
+ border: 2px solid #000;
+
+}
+.settings-box .option-box .colors-list li:first-child
+{
+    background-color: #ffc107;
+}
+.settings-box .option-box .colors-list li:nth-child(2)
+{
+    background-color: #ff0707;
+}
+.settings-box .option-box .colors-list li:nth-child(3)
+{
+    background-color: #4107ff;
+}
+.settings-box .option-box .colors-list li:nth-child(4)
+{
+    background-color: #07ffa0;
+}
+.settings-box .option-box .colors-list li:nth-child(5)
+{
+    background-color: #cd07ff;
+}
+
+.switch 
+    {
+        position: relative;
+        display: block;
+        width: 60px;
+        margin: 10px 34px;
+        padding: 15px;
+    }
+
+  /* Hide default HTML checkbox */
+.switch input 
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+  /* The slider */
+.slider
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    height: 23px;
+
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 23px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 23px;
+    left: 4px;
+    bottom: 4px;
+    background-color: black;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--main--color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--main--color);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+input:checked + .slider:after {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+  /* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+.slider.round:after {
+border-radius: 50%;
+}
+
+/* End Settings box */
+
+/* Start Landding Page */
+.landing-page
+{
+    /* Take Full hegiht*/
+    min-height: 100vh;
+    background-image: url(../images/5.jpg);
+    background-size: cover;
+}
+.landing-page .overlay
+{
+    background-color: #0000007a;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+}
+.header-are
+{
+    color: #fff;
+    position: relative;   
+    z-index: 2;
+    display: flex;
+    padding: 5px;
+}
+.header-are .logo
+{
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+}
+.header-are .links
+{
+    list-style: none;
+    width: 100%;
+    text-align: end;
+    padding-right: 15px;
+    font-size: 15px;
+}
+.header-are .links li
+{
+    display: inline;
+    padding: 7px;
+    font-size: 15px ;
+}
+.header-are .links li a
+{
+    text-decoration: none;
+   color: #fff;
+}
+.header-are .links li a:hover ,
+.header-are .links li a.active 
+
+{
+  color: var(--main--color);
+}
+.intro-text
+{
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: 3ms;
+}
+
+.intro-text h1
+{
+    font-size: 37px;
+    margin: 0 0 16px 0;
+}
+
+.intro-text h1 span
+{
+    color: var(--main--color);
+}
+.intro-text p
+{
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+}
+/* End Landding Page */
+
+/* Start Landding Page */
+
+.about-us
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+}
+.about-us .info-box
+{
+    flex: 1;
+    padding: 15px
+}
+.about-us .info-box h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main--color);
+}
+.about-us .info-box p
+{
+    line-height: 1.8;
+    color: #767676;
+   
+}
+.about-us .image-box
+{
+    flex: 1;
+    text-align: center;
+    padding: 30px 0px;
+
+}
+.about-us .image-box img
+{
+    width: 400px;
+    
+}
+
+/* End Landding Page */
+
+/* Start Skills  */
+ .skills
+ {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+
+ }
+ .skills h2
+ {
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main--color);
+    text-align: center;
+    margin: 0 0 50px;
+}
+ .skills .skill-box
+ {
+    background-color: #eaeaea;
+    padding: 15px;
+    display: flex;
+    margin-bottom: 15px;
+    
+}
+ .skills .skill-box .skill-name
+ {
+    font-weight: bold;
+    width: 140px;
+    text-align: center;
+    line-height: 30px;
+}
+ .skills .skill-box .Myskill-progress
+ {
+    height: 30px;
+    width: calc(100% - 110px);
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    position: relative;
+}
+ .skills .skill-box .Myskill-progress span
+ {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--main--color);
+    border-top-right-radius:10px ;
+    border-bottom-right-radius:10px ;
+    transition: all 0.5s;
+ }
+/* End Skills*/
+
+/* Start gellery*/
+.gellery
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+
+}
+.gellery h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main--color);
+    text-align: center;
+    margin: 0 0 50px;
+
+}
+.gellery .images-box
+{
+    text-align: center;
+
+}
+.gellery .images-box img
+{
+    width: 200px;
+    padding: 3px;
+    background-color: #eaeaea;
+    border: 1px solid var(--main--color);
+    height: 150px;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
+.pop-overlay
+{
+    position: fixed;
+    background-color: rgb(0, 0, 0,0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+.popup-box
+{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ccc;
+    border: 1px solid var(--main--color) ;
+    padding: 20px;
+    z-index: 1001;
+}
+
+.popup-box h3
+{
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 20px ;
+    color: var(--main--color);
+} 
+.popup-box img
+{
+    max-width: 100% ;
+} 
+
+.close-button
+{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: var(--main--color);
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    color:#fff;
+    cursor: pointer;
+    border-radius: 50%;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+
+}
+
+/* End gellery*/
+
+/* Start timeline*/
+
+.timeline
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 15px;
+
+}
+.timeline .timeline-content
+{
+    position: relative;
+    overflow: hidden;
+}
+.timeline .timeline-content:before
+{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: var(--main--color);
+    position: absolute;
+    left: 50%;
+    margin: -1px; /* 1/5 area*/
+}
+.timeline .timeline-content .year
+{
+    margin: 20px auto;
+    width: 50px;
+    background-color: var(--main--color);
+    position: relative;
+    z-index: 2;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 2px 5px;    
+}
+.timeline .timeline-content .left,
+.timeline .timeline-content .right
+{
+    width: calc(50% - 30px);
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline .timeline-content .left
+{
+    float: left;
+
+
+}
+.timeline .timeline-content .right
+{
+    float: right;
+}
+
+.timeline .timeline-content .content
+{
+    padding: 20px;
+    float: right;
+    background-color: #dbdbdb;
+}
+.timeline .timeline-content h3
+{
+    font-weight: bold;
+    margin: 0px 0px 10px;
+    color: var(--main--color);
+
+}
+.timeline .timeline-content p
+{
+    color: #666;
+    margin: 0;
+    line-height: 1.7;
+    
+}
+.timeline .timeline-content .left:before,
+.timeline .timeline-content .right:before
+{
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: #ffffff;
+    border: 3px solid var(--main--color);
+    right: -40px;
+    position: absolute;
+    border-radius: 50%;
+    top: 20px;
+}
+.timeline .timeline-content .left:before
+{
+    right: -40px;
+
+}
+.timeline .timeline-content .right:before
+{
+    left: -40px;
+}
+.clearfix
+{
+    clear: both;
+}
+
+/* End timeline*/
+/* Start feature*/
+.features
+{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.features h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main--color);
+    text-align: center;
+    margin: 0 0 -20px;
+}
+.features .feat-box
+{
+    width: calc(100% / 4);
+    float: left;
+    text-align: center;
+    margin: 40px;
+}
+.features .feat-box img
+{
+    width: 128px;
+    height: 180px;
+
+}
+.features .feat-box h4
+{
+    font-size: 24px;
+    margin: 10px 0 40px ;
+    position: relative;
+}
+
+.features .feat-box h4:before
+{
+    content: '';
+    width: 40px;
+    height: 4px;
+    background-color: var(--main--color);
+    position: absolute;
+    left: 50%;
+    margin-left: -20px;
+    bottom: -20px;
+
+
+
+}
+.features .feat-box p
+{
+    font-size: 16px;
+    line-height: 1.6;
+    width: 80%;
+    margin: 0 auto;
+    color: #5d5d5d;
+}
+/* End feature*/
