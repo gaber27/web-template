@@ -33,25 +33,58 @@
             </div>
             <div class="option-box">
                 <h4>Random Bacground</h4>
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
+                <label class="switch"   >
+                    <input type="checkbox" checked >
+                    <span class="slider round "></span>
                 </label>
+            </div>
+            <div class="option-box">
+                <h4>Show Bullets</h4>
+                <div class="bullets-option">
+                    <span class="yes active" data-display="show">Yes</span>
+                    <span class="no" data-display="hide">No</span>
+                </div>
+                <button class="reset-options">Reset Options</button>
             </div>
         </div>
 
     </div>
     <!-- End Setting Box -->
+
+    <!-- Start nav bullets -->
+    <div class="nav-bullets">
+        <div class="bullet" data-section=".about-us">
+            <div class="tooltip">About Us</div>
+        </div>
+        <div class="bullet" data-section=".skills">
+            <div class="tooltip">Our Skills</div>
+        </div>
+        <div class="bullet" data-section=".gellery">
+            <div class="tooltip">Our Gallery</div>
+        </div>
+        <div class="bullet" data-section=".timeline">
+            <div class="tooltip">Timeline</div>
+        </div>
+        <div class="bullet" data-section=".features">
+            <div class="tooltip">Our Features</div>
+        </div>
+        <div class="bullet" data-section=".Testimoials">
+            <div class="tooltip">Testimoials</div>
+        </div>
+    </div>
+    <!-- End nav bullets-->
     <div class="landing-page">
         <div class="overlay"></div>
         <div class="container">
             <div class="header-are">
                 <div class="logo">GTG</div>
                 <ul class="links">
-                    <li><a href="#" class="active">About</a> </li>
-                    <li><a href="#">Service</a> </li>
-                    <li><a href="#">Products</a> </li>
-                    <li><a href="#">Contact</a> </li>
+                    <li><a href="#" class="active" data-section=".about-us">About</a> </li>
+                    <li><a href="#"  data-section=".skills">Skills</a> </li>
+                    <li><a href="#"  data-section=".gellery">Gallery</a> </li>
+                    <li><a href="#"  data-section=".timeline">Timeline</a> </li>
+                    <li><a href="#"  data-section=".features">Features</a> </li>
+                    <li><a href="#"  data-section=".Testimoials">Testimonials</a> </li>
                 </ul>
             </div>
 
@@ -238,6 +271,40 @@
         </div>
     </div>
     <!-- End Features  -->
+    
+    <!-- Start Testimoials  -->
+
+    <div class="Testimoials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="ts-box" aria-disabled="">
+                <p>Iam very happy with the product its amazing and i receve it very fast .</p>
+                <div class="person-info">
+                    <img src="images/per1.png " alt="" width=60px>
+                    <h4>Radwa Mohamed</h4>
+                    <p>CEO At Company</p>
+                </div>
+            </div>
+            <div class="ts-box">
+                <p>Iam very happy with the product its amazing and i receve it very fast .</p>
+                <div class="person-info">
+                    <img src="images/per2.jpeg " alt="" width=60px>
+                    <h4>Nada Ibrahim</h4>
+                    <p>Designer At Company</p>
+                </div>
+            </div>
+            <div class="ts-box">
+                <p>Iam very happy with the product its amazing and i receve it very fast .</p>
+                <div class="person-info">
+                    <img src="images/per3.jpg " alt="" width=60px>
+                    <h4>Mohamed Ahsraf</h4>
+                    <p>Developer At Company</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- End Testimoials  -->
     <script src="js/master.js"></script>
 
 </body>

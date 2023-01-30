@@ -71,15 +71,7 @@ colorLi.forEach(li=>
             // set color on local storage in site 
             localStorage.setItem("color_option",e.target.dataset.color);
 
-            // Remove Active clas form all child
-            e.target.parentElement.querySelectorAll(".active").forEach(element => 
-                {
-                    element.classList.remove("active");
-                }) ;
-
-                // Add Active Class on Self
-                e.target.classList.add("active")
-
+            handleActive(e);
         })
     })
 // Select Landing Page Element
@@ -105,15 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var checkbox = document.querySelector('input[type="checkbox"]');
     checkbox.checked =localStorage.getItem("background_option") == "true" ?true :false;
     
-    if(checkbox.checked == null)
+    if(localStorage.getItem('background_option') === null)
     {
-    backgroundInterval =  setInterval(()=>
-        {
-            let randomNum =Math.floor(Math.random() * imgArray.length );
-            // Change Background
-        landingPage.style.backgroundImage = 'url("images/' + imgArray[randomNum]+ '")';
+        
+        clearInterval(backgroundInterval);
 
-        }, 3000 );
 
     }
 
@@ -137,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function () {
             clearInterval(backgroundInterval);
             checkbox.checked =backgroundOptions
         
-            console.log('Not checked'); 
 }
     });
 });
@@ -158,15 +145,18 @@ imagesRandom();
  // Select Skill Selector
 
 let ourSkills = document.querySelector(".skills");
+let ourPersons = document.querySelector(".Testimoials");
 
 window.onscroll = function ()
 {
     // Skills offset top
 
     let SkillsOffSetTop = ourSkills.offsetTop;
+    let personOffSetTop = ourPersons.offsetTop;
 
     // Skills outer Height
 let SkillsOuterHeight = ourSkills.offsetHeight ; 
+let personOuterHeight = ourPersons.offsetHeight ; 
 
    // The windows Hegith
 let windowHeight = this.innerHeight;
@@ -176,12 +166,20 @@ let windowScrollTop = Math.ceil(this.pageYOffset);
 
 if(windowScrollTop > ((SkillsOffSetTop + SkillsOuterHeight) - windowHeight- 350))
 {
-    this.console.log("reach");
 let allSkills = document.querySelectorAll(".skill-box .Myskill-progress span");
     allSkills.forEach(skill => 
         {
             skill.style.width = skill.dataset.progress;
         });
+
+}
+if(windowScrollTop > ((personOffSetTop + personOuterHeight) - windowHeight - 50))
+{
+let allPersin = document.querySelectorAll(".Testimoials .ts-box");
+    allPersin.forEach(person => 
+        {
+            person.style.display = "block";
+                    });
 
 }
 }
@@ -284,3 +282,99 @@ ourGallery.forEach(img =>
         document.querySelector(".pop-overlay").remove();
         }
     });
+
+    // Select all bullets 
+    const allBullets =  document.querySelectorAll(".nav-bullets .bullet");
+    
+    // Select all Links 
+    const allLinks =  document.querySelectorAll(".links a");
+
+
+    function scrollToSection(elements)
+    {
+
+        elements.forEach(ele =>{
+            ele.addEventListener("click",(e)=>
+            {
+                e.preventDefault();
+                document.querySelector(e.target.dataset.section).scrollIntoView(
+                    {
+                        behavior:'smooth'
+                    });
+    
+    
+            });
+        });
+
+    }
+    scrollToSection(allBullets);
+    scrollToSection(allLinks);
+
+    // handle Active State
+    function handleActive(ev)
+    {
+        ev.target.parentElement.querySelectorAll(".active").forEach(element=>
+            {
+                // Remove Active Vlass From All Children
+                element.classList.remove("active");
+            });
+
+            // Add Active Class On Self
+            ev.target.classList.add("active");
+    }
+
+    let bulletsSpan = document.querySelectorAll(".bullets-option span");
+
+    let bulletsContainer = document.querySelector(".nav-bullets");
+
+    let bulletLocalItem = localStorage.getItem("bullets_option");
+    
+    if(bulletLocalItem !== null) {
+
+        bulletsSpan.forEach(span=>
+            {
+                span.classList.remove('active');
+            });
+
+
+            if(bulletLocalItem === 'block')
+            {
+                bulletsContainer.style.display = "block";
+                document.querySelector(".bullets-option .yes").classList.add('active');
+            }else
+            {
+                bulletsContainer.style.display = "none";
+                document.querySelector(".bullets-option .no").classList.add('active');
+
+
+            }
+
+
+    }
+
+    bulletsSpan.forEach(span =>
+        {
+            span.addEventListener("click",(e)=>
+            {
+                if(span.dataset.display == 'show')
+                {
+                    bulletsContainer.style.display = "block";
+                    localStorage.setItem('bullets_option','block')
+
+                }else
+                {
+                    bulletsContainer.style.display = 'none';
+                    localStorage.setItem('bullets_option','none')
+                }
+                handleActive(e);
+            });
+        });
+
+        // Reset Button
+
+        document.querySelector(".reset-options").onclick = function()
+        {
+            localStorage.clear();
+            // localStorage.removeItem("color_options")
+            window.location.reload();
+        };
