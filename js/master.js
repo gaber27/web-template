@@ -164,7 +164,7 @@ let windowHeight = this.innerHeight;
    //window SCROLL TOP
 let windowScrollTop = Math.ceil(this.pageYOffset);
 
-if(windowScrollTop > ((SkillsOffSetTop + SkillsOuterHeight) - windowHeight- 350))
+if(windowScrollTop > ((SkillsOffSetTop + SkillsOuterHeight) - windowHeight))
 {
 let allSkills = document.querySelectorAll(".skill-box .Myskill-progress span");
     allSkills.forEach(skill => 
@@ -173,7 +173,7 @@ let allSkills = document.querySelectorAll(".skill-box .Myskill-progress span");
         });
 
 }
-if(windowScrollTop > ((personOffSetTop + personOuterHeight) - windowHeight - 50))
+if(windowScrollTop > ((personOffSetTop + personOuterHeight) - windowHeight))
 {
 let allPersin = document.querySelectorAll(".Testimoials .ts-box");
     allPersin.forEach(person => 
@@ -378,3 +378,40 @@ ourGallery.forEach(img =>
             // localStorage.removeItem("color_options")
             window.location.reload();
         };
+
+        // Toggle menu
+
+        let toggleBtn = document.querySelector(".toggle-menu");
+        let tLinks = document.querySelector(".links");
+
+        toggleBtn.onclick = function (e)
+        {
+            // Stop Propagation
+            e.stopPropagation();
+            this.classList.toggle("menu-active");
+            tLinks.classList.toggle('open');
+        }
+
+        //Click Any Where out Side Button To Close it
+
+        document.addEventListener("click",(e)=>
+        {
+
+            if(e.target !== toggleBtn && e.target !== tLinks)
+            {
+               // check if Menu is Open
+                if(tLinks.classList.contains("open"))
+                {
+                    toggleBtn.classList.toggle("menu-active");
+                    tLinks.classList.toggle('open');
+                }
+
+            }
+        });
+
+        // Stop Propagation in the menu
+
+        tLinks.onclick = function(e)
+        {
+            e.stopPropagation();
+        }

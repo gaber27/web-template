@@ -15,7 +15,7 @@ body
 
 .container
 {
-    width: 1170px;
+    /* width: 1170px; */
     padding-left: 15px;
     padding-right: 15px;
     margin: auto;
@@ -339,13 +339,16 @@ border-radius: 50%;
     padding: 15px;
     font-weight: bold;
 }
+.header-are .links-container
+{
+    width: 100%;
+    text-align: right;
+}
 .header-are .links
 {
     list-style: none;
-    width: 100%;
     text-align: end;
-    padding-right: 15px;
-    font-size: 15px;
+
 }
 .header-are .links li
 {
@@ -364,6 +367,47 @@ border-radius: 50%;
 {
   color: var(--main--color);
 }
+
+.header-are .toggle-menu
+{
+    background: none;
+    border: none;
+    width: 40px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: none;
+    position: relative;
+    
+}
+
+.header-are .toggle-menu.menu-active::before
+{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    margin-left: -9px;
+    
+}
+
+.header-are .toggle-menu:focus
+{
+    outline: none;
+
+    
+}
+.header-are .toggle-menu span
+{
+    display: block;
+    /* width: 100%; */
+    background: #fff;
+    height: 3px;
+    margin-bottom: 3px;
+}
+
 .intro-text
 {
     position: absolute;
@@ -379,7 +423,7 @@ border-radius: 50%;
 .intro-text h1
 {
     font-size: 37px;
-    margin: 0 0 16px 0;
+    margin: 16px 0 16px 0;
 }
 
 .intro-text h1 span
@@ -392,6 +436,40 @@ border-radius: 50%;
     font-size: 16px;
     margin: 0;
     width: 100%;
+}
+
+@media(max-width:991px)
+{
+    .header-are .links 
+    {
+        display: none;
+    }
+    .header-are .links.open
+    {
+        background-color: white;
+        padding: 0px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 35px;
+        width: 100%;
+        border-radius: 7px;
+        
+
+        }
+    .header-are .links.open li a
+    {
+     color: var(--main--color);
+    font-weight: bold;
+    display: block;
+    margin: 0;
+    text-align: center;
+
+    }
+    .header-are .toggle-menu
+    {
+        display: inline-block;
+    }
 }
 /* End Landding Page */
 
@@ -828,3 +906,136 @@ border-radius: 50%;
 }
 
 /* End Testimoials*/
+/* Start Contact*/
+.contact
+{
+    min-height: 600px;
+    background-image: url(../images/map.jpg);
+    background-size: cover;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    position: relative;
+}
+.contact .overlay
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255,0.6);
+    /* background-color: rgb(255 255 255 / 60% ); */
+}
+
+.contact .container
+{
+    position: relative;
+    z-index: 2;
+}
+
+.contact h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main--color);
+    text-align: center;
+    margin: 0 0 60px;
+}
+.contact form
+{
+    overflow: hidden;
+    max-width: 700px;
+    margin: auto;
+
+}
+.contact form .left 
+{
+    float: left;
+    width: 49%;
+}
+.contact form .right 
+{
+    float: right;
+    width: 49%;
+}
+.contact form input:not([type="submit"]) , 
+.contact form textarea
+{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    background-color: rgb(218, 218, 218,0.19);
+}
+.contact form input:not([type="submit"]):focus, 
+.contact form textarea:focus
+{
+    outline: 2px solid var(--main--color);
+}
+.contact form input
+{
+    height: 40px;
+}
+.contact form textarea
+{
+    height: 150px;
+}
+
+.contact form input[type='submit']
+{
+    padding: 10px;
+    width: 100%;
+    border-color: transparent;
+    background-color: var(--main--color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact form textarea:focus::-webkit-input-placeholder,
+.contact form input:not([type="submit"]):focus::-webkit-input-placeholder
+{
+    opacity: 0;
+    transition: 0.3s;
+}
+/* End Contact*/
+
+
+/* Start Grid System*/
+
+@media(min-width:576px)
+{
+    .container
+    {
+        max-width: 540px;
+    }
+} /* Small Devices*/
+
+@media(min-width: 768px)
+{
+    .container
+    {
+        max-width: 720px;
+    }
+} /* Mediam Devices*/
+
+@media(min-width: 992px)
+{
+    .container
+    {
+        max-width: 960px;
+    }
+} /* Desktop Devices*/
+
+@media(min-width: 1200px)
+{
+    .container
+    {
+        max-width: 1140px;
+    }
+} /* Large Screens*/
+
+
+
+
+/* End Grid System*/

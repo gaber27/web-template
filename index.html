@@ -78,14 +78,22 @@
         <div class="container">
             <div class="header-are">
                 <div class="logo">GTG</div>
-                <ul class="links">
-                    <li><a href="#" class="active" data-section=".about-us">About</a> </li>
-                    <li><a href="#"  data-section=".skills">Skills</a> </li>
-                    <li><a href="#"  data-section=".gellery">Gallery</a> </li>
-                    <li><a href="#"  data-section=".timeline">Timeline</a> </li>
-                    <li><a href="#"  data-section=".features">Features</a> </li>
-                    <li><a href="#"  data-section=".Testimoials">Testimonials</a> </li>
-                </ul>
+                <div class="links-container">
+                    <ul class="links">
+                        <li><a href="#" class="active" data-section=".about-us">About</a> </li>
+                        <li><a href="#"  data-section=".skills">Skills</a> </li>
+                        <li><a href="#"  data-section=".gellery">Gallery</a> </li>
+                        <li><a href="#"  data-section=".timeline">Timeline</a> </li>
+                        <li><a href="#"  data-section=".features">Features</a> </li>
+                        <li><a href="#"  data-section=".Testimoials">Testimonials</a> </li>
+                    </ul>
+                    <button class="toggle-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
             </div>
 
         </div>
@@ -305,6 +313,28 @@
         </div>
     </div>
     <!-- End Testimoials  -->
+    <!-- Start Contact Us  -->
+    <div class="contact">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form action="">
+                <div class="left">
+                    <input type="text" placeholder="Your Name" name="username">
+                    <input type="text" placeholder="Your Phone" name="phone">
+                    <input type="email" placeholder="Your Email" name="Email">
+                    <input type="text" placeholder="Subject" name="subject">
+                </div>
+                <div class="right">
+
+                    <textarea name="message" placeholder="Your Message" ></textarea>
+                    <input type="submit" value="Send">
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- End Contact Us  -->
     <script src="js/master.js"></script>
 
 </body>
