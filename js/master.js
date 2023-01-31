@@ -164,7 +164,7 @@ let windowHeight = this.innerHeight;
    //window SCROLL TOP
 let windowScrollTop = Math.ceil(this.pageYOffset);
 
-if(windowScrollTop > ((SkillsOffSetTop + SkillsOuterHeight) - windowHeight))
+if(windowScrollTop > ((SkillsOffSetTop + SkillsOuterHeight) - windowHeight - 200))
 {
 let allSkills = document.querySelectorAll(".skill-box .Myskill-progress span");
     allSkills.forEach(skill => 
@@ -173,7 +173,7 @@ let allSkills = document.querySelectorAll(".skill-box .Myskill-progress span");
         });
 
 }
-if(windowScrollTop > ((personOffSetTop + personOuterHeight) - windowHeight))
+if(windowScrollTop > ((personOffSetTop + personOuterHeight) - windowHeight - 50))
 {
 let allPersin = document.querySelectorAll(".Testimoials .ts-box");
     allPersin.forEach(person => 
