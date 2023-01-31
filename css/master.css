@@ -58,7 +58,15 @@ body
 
     padding: 5px 5px;
 }
+ @media(max-width:575px)
+ {
+    .settings-box .toggle-settings 
+    {
+        left: 220px;
 
+    }
+
+ }
 .settings-box .option-box
 {
     margin: 20px;
@@ -1118,6 +1126,20 @@ border-radius: 50%;
 
 }
 /* End Contact*/
+
+/* Start Footer*/
+.footer
+{
+    background-color: #000;
+    color: #eee;
+    padding: 20px;
+    text-align: center;
+}
+.footer span
+{
+    color: var(--main--color);
+}
+/* End Footer*/
 
 
 /* Start Grid System*/
