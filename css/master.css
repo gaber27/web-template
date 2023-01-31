@@ -50,6 +50,7 @@ body
     background: #fff;
     cursor: pointer;
     width: 30px;
+    margin-right: 20px;
 
 }
 .settings-box .toggle-settings .fa-gear
